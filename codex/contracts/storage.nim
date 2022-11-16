@@ -46,7 +46,7 @@ proc getHost*(storage: Storage, id: SlotId): Address {.contract, view.}
 proc getSlot*(storage: Storage, id: SlotId): Slot {.contract, view.}
 
 proc myRequests*(storage: Storage): seq[RequestId] {.contract, view.}
-proc mySlots*(storage: Storage): seq[SlotId] {.contract, view.}
+proc mySlots*(storage: Storage, requestId: RequestId): seq[SlotId] {.contract, view.}
 proc state*(storage: Storage, requestId: RequestId): RequestState {.contract, view.}
 proc requestEnd*(storage: Storage, requestId: RequestId): SecondsSince1970 {.contract, view.}
 
